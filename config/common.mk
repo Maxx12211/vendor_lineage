@@ -239,5 +239,8 @@ include vendor/lineage/config/version.mk
 
 -include vendor/lineage-priv/keys/keys.mk
 
+# Pixel Framework
+$(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
