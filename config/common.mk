@@ -186,6 +186,10 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/procmem
 endif
 
+# Repainter integration
+ PRODUCT_PACKAGES += \
+     RepainterServicePriv \
+
 # Root
 PRODUCT_PACKAGES += \
     adb_root
