@@ -7,6 +7,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.alarm_alert=Hassium.ogg
 
 # Apps
+ifneq ($(WITH_GMS), true)
 PRODUCT_PACKAGES += \
     Backgrounds \
     Eleven \
@@ -15,6 +16,7 @@ PRODUCT_PACKAGES += \
     Jelly \
     Profiles \
     Seedvault
+endif
 
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
 PRODUCT_PACKAGES += \

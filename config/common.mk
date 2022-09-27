@@ -1,7 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= PalyrimOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -48,6 +48,17 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
 endif
+endif
+
+
+# Gapps
+ifeq ($(WITH_GMS), true)
+    include vendor/lineage/config/gms.mk
+	PALYRIM_VARIANT := GAPPS
+else
+	PALYRIM_VARIANT := VANILLA
+	PRODUCT_PACKAGES += \
+    		LineageSetupWizard
 endif
 
 # Lineage-specific broadcast actions whitelist
@@ -110,7 +121,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageParts \
     LineageSettingsProvider \
-    LineageSetupWizard \
     Updater
 
 PRODUCT_COPY_FILES += \

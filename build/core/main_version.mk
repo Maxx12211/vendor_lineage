@@ -4,18 +4,17 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-# LineageOS System Version
+# PalyrimOS System Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(LINEAGE_VERSION) \
+    ro.palyrim.maintainer=$(PALYRIM_MAINTAINER) \
+    ro.palyrim.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.palyrim.display.version=$(LINEAGE_DISPLAY_VERSION) \
+    ro.palyrim.version=$(LINEAGE_VERSION) \
+    ro.modversion=$(PALYRIM_CODE) \
+    ro.palyrim.packagetype=$(PALYRIM_VARIANT) \
+    ro.palyrim.releasetype=$(PALYRIM_BUILD_TYPE) \
     ro.lineagelegal.url=https://lineageos.org/legal
-
-# LineageOS Platform Display Version
-ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION)
-
+    
 # LineageOS Platform SDK Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.lineage.build.version.plat.sdk=$(LINEAGE_PLATFORM_SDK_VERSION)
