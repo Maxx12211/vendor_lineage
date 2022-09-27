@@ -7,8 +7,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.alarm_alert=Hassium.ogg
 
 # Apps
+ifneq ($(WITH_GMS), true)
 PRODUCT_PACKAGES += \
-    Aperture \
     Backgrounds \
     Eleven \
     Etar \
@@ -16,6 +16,7 @@ PRODUCT_PACKAGES += \
     Jelly \
     Profiles \
     Seedvault
+endif
 
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
 PRODUCT_PACKAGES += \
@@ -24,16 +25,16 @@ endif
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
-    TrebuchetQuickStepGo
+    Launcher3QuickStepGo
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStepGo
+    Launcher3QuickStepGo
 else
 PRODUCT_PACKAGES += \
-    TrebuchetQuickStep
+    Launcher3QuickStep
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStep
+    Launcher3QuickStep
 endif
 
 # Charger

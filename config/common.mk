@@ -1,7 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= PalyrimOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -48,6 +48,17 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
 endif
+endif
+
+
+# Gapps
+ifeq ($(WITH_GMS), true)
+    include vendor/lineage/config/gms.mk
+	PALYRIM_VARIANT := GAPPS
+else
+	PALYRIM_VARIANT := VANILLA
+	PRODUCT_PACKAGES += \
+    		LineageSetupWizard
 endif
 
 # Lineage-specific broadcast actions whitelist
@@ -113,9 +124,9 @@ PRODUCT_PACKAGES += \
 
 # Lineage packages
 PRODUCT_PACKAGES += \
+    Aperture \
     LineageParts \
     LineageSettingsProvider \
-    LineageSetupWizard \
     Updater
 
 PRODUCT_COPY_FILES += \
@@ -208,8 +219,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/lineage/overlay/no-rro
 
 PRODUCT_PACKAGES += \
-    NetworkStackOverlay \
-    TrebuchetOverlay
+    NetworkStackOverlay
 
 # Translations
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
@@ -224,3 +234,4 @@ include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+-include vendor/addons/addons.mk
