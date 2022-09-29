@@ -130,6 +130,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
 
+# Palyrim Packages
+PRODUCT_PACKAGES += \
+    GameSpace
+
 # Themes
 PRODUCT_PACKAGES += \
     LineageBlackTheme \
