@@ -9,7 +9,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Apps
 ifneq ($(WITH_GMS), true)
 PRODUCT_PACKAGES += \
-    Aperture \
     Backgrounds \
     Eleven \
     Etar \
