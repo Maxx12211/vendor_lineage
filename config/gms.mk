@@ -16,3 +16,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Gapps overlays
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/lineage/overlay/gms
+
+# Setup some Flags, can be disabled in Device tree
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT ?= true
