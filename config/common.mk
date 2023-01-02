@@ -50,16 +50,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 endif
 
-
 # Gapps
-ifeq ($(WITH_GMS), true)
     include vendor/lineage/config/gms.mk
-	PALYRIM_VARIANT := GAPPS
-else
-	PALYRIM_VARIANT := VANILLA
-	PRODUCT_PACKAGES += \
-    		LineageSetupWizard
-endif
 
 # Lineage-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
