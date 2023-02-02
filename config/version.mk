@@ -7,7 +7,7 @@ PALYRIM_CODE := 1.5
 ANDROID_CODE := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
 
 # OFFICIAL_DEVICES
-PALYRIM_BUILD_TYPE := unofficial
+PALYRIM_BUILD_TYPE := community
   LIST = $(shell cat vendor/lineage/palyrim.devices)
     ifeq ($(filter $(LINEAGE_BUILD), $(LIST)), $(LINEAGE_BUILD))
       IS_OFFICIAL=true
